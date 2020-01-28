@@ -3,7 +3,7 @@ plugins {
     kotlin("android")
 }
 group = "com.github.langara.recyclerui"
-version = "0.0.1"
+version = "0.0.2"
 
 android {
     compileSdkVersion(Vers.androidCompileSdk)
@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion(21)
         targetSdkVersion(Vers.androidTargetSdk)
-        versionCode = 100
-        versionName = "0.0.1"
+        versionCode = 200
+        versionName = "0.0.2"
     }
 }
 

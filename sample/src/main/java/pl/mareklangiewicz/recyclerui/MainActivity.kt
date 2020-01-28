@@ -1,12 +1,27 @@
 package pl.mareklangiewicz.recyclerui
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import splitties.views.dsl.core.add
-import splitties.views.dsl.core.lParams
-import splitties.views.dsl.core.textView
-import splitties.views.dsl.core.verticalLayout
+import pl.mareklangiewicz.sandboxui.sandbox
+import splitties.views.dsl.core.*
+import splitties.views.padding
+
+data class Title(val title: String) : WithId {
+    override val id = title.hashCode().toLong()
+}
+
+class SomeItemUi(override val ctx: Context) : ItemUi<Title> {
+    override fun render(item: Title) { root.text = item.title }
+    override val root = button()
+}
+
+private val someTitles = listOf(
+    Title("Mad Item"),
+    Title("Dirty Widget"),
+    Title("Views Terminator")
+)
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,13 +29,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+        val ui1 = RecyclerUi(this, ::SomeItemUi)
+        val ui2 = RecyclerUi(this, ::SomeItemUi)
 
-        val view1 = verticalLayout {
-            for (i in 1..5)
-                add(textView { text = "Text 1 $i" }, lParams())
+        val box = sandbox("RecyclerUi playground") {
+            + ui1.root.apply { padding = 16 }
+            + ui2.root.apply { padding = 16 }
+            action("populate 2") { ui1.items += someTitles }
+            action("populate 3") { ui2.items += someTitles }
         }
 
-        setContentView(view1)
+        setContentView(box)
     }
 }
 

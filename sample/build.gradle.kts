@@ -18,4 +18,5 @@ android {
 dependencies {
     implementation(project(":recyclerui"))
     implementation(Deps.splitties)
+    implementation(Deps.sandboxui)
 }
