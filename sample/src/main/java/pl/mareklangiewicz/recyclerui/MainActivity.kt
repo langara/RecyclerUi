@@ -20,7 +20,8 @@ class SomeItemUi(override val ctx: Context) : ItemUi<Title> {
 private val someTitles = listOf(
     Title("Mad Item"),
     Title("Dirty Widget"),
-    Title("Views Terminator")
+    Title("Views Terminator"),
+    Title("Compose Fiction")
 )
 
 class MainActivity : AppCompatActivity() {
@@ -31,12 +32,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val ui1 = RecyclerUi(this, ::SomeItemUi)
         val ui2 = RecyclerUi(this, ::SomeItemUi)
+        val ui3 = RecyclerUi(this, ::SomeItemUi)
 
         val box = sandbox("RecyclerUi playground") {
             + ui1.root.apply { padding = 16 }
             + ui2.root.apply { padding = 16 }
-            action("populate 2") { ui1.items += someTitles }
-            action("populate 3") { ui2.items += someTitles }
+            + ui3.root.apply { padding = 16 }
+            action("populate 1") { ui1.items += someTitles }
+            action("populate 2") { ui2.items += someTitles }
+            action("populate 3") { ui3.items += someTitles }
         }
 
         setContentView(box)
