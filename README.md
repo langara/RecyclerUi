@@ -1,7 +1,7 @@
-# SandboxUi
+# RecyclerUi
 
-Use [Splitties](https://github.com/LouisCAD/Splitties) to wrap any Ui in sandbox with some options for faster manual Ui testing/debugging
+Use [Splitties](https://github.com/LouisCAD/Splitties) to wrap RecyclerView in simple to use list component
 
-[![](https://jitpack.io/v/langara/SandboxUi.svg)](https://jitpack.io/#langara/SandboxUi)
+[![](https://jitpack.io/v/langara/RecyclerUi.svg)](https://jitpack.io/#langara/RecyclerUi)
 
-https://jitpack.io/#langara/SandboxUi
+https://jitpack.io/#langara/RecyclerUi

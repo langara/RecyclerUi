@@ -1,10 +1,9 @@
 plugins {
     id("com.android.library")
     kotlin("android")
-    kotlin("android.extensions")
 }
-group = "com.github.langara.sandboxui"
-version = "0.0.5"
+group = "com.github.langara.recyclerui"
+version = "0.0.1"
 
 android {
     compileSdkVersion(Vers.androidCompileSdk)
@@ -12,15 +11,14 @@ android {
     defaultConfig {
         minSdkVersion(21)
         targetSdkVersion(Vers.androidTargetSdk)
-        versionCode = 500
-        versionName = "0.0.5"
+        versionCode = 100
+        versionName = "0.0.1"
     }
 }
 
 dependencies {
     implementation(Deps.kotlinStdlib7)
     implementation(Deps.splitties)
-    api(Deps.androidxFlexboxLayout)
 }
 
 apply(from = "https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle")

@@ -11,8 +11,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/deps.kt/buildSrc" />
+            <option value="$PROJECT_DIR$/recyclerui" />
             <option value="$PROJECT_DIR$/sample" />
-            <option value="$PROJECT_DIR$/sandboxui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
